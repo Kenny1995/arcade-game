@@ -1,3 +1,32 @@
 body {
     text-align: center;
 }
+
+h3{
+    display:none;
+    color: #0000ff;
+    font-family: Candal;
+    font-size: 50px;
+    margin-top: -5vh;
+    font-weight: bold;
+  }
+
+p {
+    font-size: 25px;
+    color: #0000ff;
+    font-family: Candal;
+    font-weight: bold;
+    padding: 0;
+}
+
+/* for small devices */
+
+@media screen and (max-width: 767px) {
+
+    canvas {
+        max-width: 360px;
+        min-height: 450px;
+
+    }
+
+}
