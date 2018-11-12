@@ -22,18 +22,10 @@ Enemy.prototype.update = function (dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    if( level === 1){
-        //allEnemies.splice(4, 9);
-        this.speed = 160;
-    }
-    if( level === 2 ){
-        //allEnemies.splice(6, 9);
-        this.speed = 270;
-    }
-    if( level === 3 ){
-        //allEnemies.slice(0, 9);
-        this.speed = 360;
-    }
+    if (this.x > 510) {
+        this.x = -50;
+        this.speed = 100 + Math.floor(Math.random() * 222);
+    };
 
     if (this.x < this.boundary) {
         this.x += this.speed * dt;
@@ -113,9 +105,9 @@ class Hero {
         if (this.y < -18) {
             this.reset();
             level++;
-            if (level > 3) {
-                prompt('YOU WIN!!!')
-                setTimeout(this.reset(), 1000);
+            if (level > 4) {
+                this.victory = true;
+                this.reset()
                 level = 1;
             }
             document.getElementById("myspan").innerHTML = level;
@@ -129,15 +121,15 @@ class Hero {
 }
 
 const player = new Hero();
-const enemy1 = new Enemy(-101, 0, this.speed);
-const enemy2 = new Enemy(-101, 83, this.speed);
-const enemy3 = new Enemy((-101 * 2.5), 83, this.speed);
-const enemy4 = new Enemy(-101, 166, this.speed);
-const enemy5 = new Enemy((-101 * 2.5), 0, this.speed);
-const enemy6 = new Enemy((-101 * 3.5), 83, this.speed);
-const enemy7 = new Enemy((-101 * 2.5), 166, this.speed);
-const enemy8 = new Enemy((-101 * 3.8), 0, this.speed);
-const enemy9 = new Enemy((-101 * 4), 166, this.speed);
+const enemy1 = new Enemy(-101, 0, 160);
+const enemy2 = new Enemy(-101, 83, 160);
+const enemy3 = new Enemy((-101 * 2.5), 83, 160);
+const enemy4 = new Enemy(-101, 166, 160);
+const enemy5 = new Enemy((-101 * 2.5), 0, 160);
+const enemy6 = new Enemy((-101 * 3.5), 83, 160);
+const enemy7 = new Enemy((-101 * 2.5), 166, 160);
+const enemy8 = new Enemy((-101 * 3.8), 0, 160);
+const enemy9 = new Enemy((-101 * 4), 166, 160);
 
 const allEnemies = [];
 allEnemies.push(enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9);
