@@ -7,7 +7,7 @@ Arcade Game
 
 This is a updated clone of the game frogger.
 
-To play this game click [here](https://kenny1995.github.io/arcade-game/
+To play this game click [here](https://kendevops.github.io/arcade-game/
 )
 
 Instructions
